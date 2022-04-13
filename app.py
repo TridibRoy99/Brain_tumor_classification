@@ -2,7 +2,7 @@
 import streamlit as st
 import tensorflow as tf
 from PIL import Image
-import urllib.requests
+import urllib.request
 
 st.set_option('deprecation.showfileUploaderEncoding', False)
 
