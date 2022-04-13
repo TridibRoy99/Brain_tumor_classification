@@ -3,6 +3,8 @@ import streamlit as st
 import tensorflow as tf
 from PIL import Image
 import urllib.request
+url = 'https://github.com/TridibRoy99/Brain_tumor_classification/blob/0176dd53784eed2c80e8cfc182c4ea0cc15b1821/my_model.h5'
+filename = url.split('/')[-1]
 
 st.set_option('deprecation.showfileUploaderEncoding', False)
 
@@ -34,7 +36,7 @@ CT_url = st.file_uploader("Upload CT scan image of brain", type=["png","jpg","jp
 # try:
 st.image(CT_url,caption="Uploaded image")
 with st.spinner("Processing the image and loading necessary files....."):
-    new_model = tf.keras.models.load_model('https://github.com/TridibRoy99/Brain_tumor_classification/blob/0176dd53784eed2c80e8cfc182c4ea0cc15b1821/my_model.h5')
+    new_model = tf.keras.models.load_model(urllib.request.urlretrieve(url, filename))
     # im = Image.open(requests.get(CT_url, stream=True).raw)
     im = Image.open(CT_url)
     im = np.array(im).astype('float32')/255
