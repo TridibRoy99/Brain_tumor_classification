@@ -1,0 +1,17 @@
+streamlit
+base64
+tensorflow
+PIL
+requests
+matplotlib
+matplotlib.pyplot
+pathlib
+shutil
+numpy
+seaborn
+sklearn
+pandas
+cv2
+scipy
+os
+io
