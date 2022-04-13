@@ -31,9 +31,9 @@ name_cols=st.columns(2)
 CT_url = st.file_uploader("Upload CT scan image of brain", type=["png","jpg","jpeg"]) 
 
 
-try:
-  st.image(CT_url,caption="Uploaded image")
-  with st.spinner("Processing the image and loading necessary files....."):
+# try:
+st.image(CT_url,caption="Uploaded image")
+with st.spinner("Processing the image and loading necessary files....."):
     new_model = tf.keras.models.load_model(urllib.request.urlopen('https://drive.google.com/file/d/1Id2s1LXIVwvCJpU0wy7p39cf6aCrULqL'))
     # im = Image.open(requests.get(CT_url, stream=True).raw)
     im = Image.open(CT_url)
@@ -65,5 +65,5 @@ try:
     else:
         st.write('Identifying as **No Tumor** detected')
 
-except:
-  st.text("Waiting for image....")
+# except:
+#   st.text("Waiting for image....")
