@@ -1,24 +1,8 @@
 
 import streamlit as st
-import base64
-from pathlib import Path
 import tensorflow as tf
 from PIL import Image
-import requests
-import matplotlib as mpl
-import matplotlib.pyplot as plt
-import pathlib
-import shutil
-import numpy as np
-import seaborn as sns
-import sklearn
-import pandas as pd
-import cv2
-import scipy
-import os
-from keras.preprocessing.image import load_img
-from tempfile import NamedTemporaryFile
-import io
+import urllib.requests
 
 st.set_option('deprecation.showfileUploaderEncoding', False)
 
