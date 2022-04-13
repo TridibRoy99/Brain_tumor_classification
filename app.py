@@ -1,24 +1,8 @@
 
 import streamlit as st
-import base64
-from pathlib import Path
 import tensorflow as tf
 from PIL import Image
-import requests
-import matplotlib as mpl
-import matplotlib.pyplot as plt
-import pathlib
-import shutil
-import numpy as np
-import seaborn as sns
-import sklearn
-import pandas as pd
-import cv2
-import scipy
-import os
-from keras.preprocessing.image import load_img
-from tempfile import NamedTemporaryFile
-import io
+import urllib.request
 
 st.set_option('deprecation.showfileUploaderEncoding', False)
 
@@ -47,10 +31,10 @@ name_cols=st.columns(2)
 CT_url = st.file_uploader("Upload CT scan image of brain", type=["png","jpg","jpeg"]) 
 
 
-try:
-  st.image(CT_url,caption="Uploaded image")
-  with st.spinner("Processing the image and loading necessary files....."):
-    new_model = tf.keras.models.load_model('saved_model/my_model.h5')
+# try:
+st.image(CT_url,caption="Uploaded image")
+with st.spinner("Processing the image and loading necessary files....."):
+    new_model = tf.keras.models.load_model(urllib.request.urlopen('https://drive.google.com/file/d/1Id2s1LXIVwvCJpU0wy7p39cf6aCrULqL&export=download'))
     # im = Image.open(requests.get(CT_url, stream=True).raw)
     im = Image.open(CT_url)
     im = np.array(im).astype('float32')/255
@@ -81,5 +65,5 @@ try:
     else:
         st.write('Identifying as **No Tumor** detected')
 
-except:
-  st.text("Waiting for image....")
+# except:
+#   st.text("Waiting for image....")
