@@ -1,16 +1,3 @@
 streamlit
 tensorflow==2.8.0
-PIL
-requests
-matplotlib
-matplotlib.pyplot
-pathlib
-shutil
-numpy
-seaborn
-sklearn
-pandas
-cv2
-scipy
-os
-io
+
