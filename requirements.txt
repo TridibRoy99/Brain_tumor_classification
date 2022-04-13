@@ -1,6 +1,5 @@
 streamlit
-base64
-tensorflow
+tensorflow==2.8.0
 PIL
 requests
 matplotlib
