@@ -3,8 +3,7 @@ import streamlit as st
 import tensorflow as tf
 from PIL import Image
 import urllib.request
-url = 'https://github.com/TridibRoy99/Brain_tumor_classification/blob/0176dd53784eed2c80e8cfc182c4ea0cc15b1821/my_model.h5'
-filename = url.split('/')[-1]
+import numpy as np
 
 st.set_option('deprecation.showfileUploaderEncoding', False)
 
