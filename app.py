@@ -34,7 +34,7 @@ CT_url = st.file_uploader("Upload CT scan image of brain", type=["png","jpg","jp
 # try:
 st.image(CT_url,caption="Uploaded image")
 with st.spinner("Processing the image and loading necessary files....."):
-    new_model = tf.keras.models.load_model(urllib.request.urlopen('https://drive.google.com/file/d/1Id2s1LXIVwvCJpU0wy7p39cf6aCrULqL'))
+    new_model = tf.keras.models.load_model(urllib.request.urlopen('https://drive.google.com/file/d/1Id2s1LXIVwvCJpU0wy7p39cf6aCrULqL&export=download'))
     # im = Image.open(requests.get(CT_url, stream=True).raw)
     im = Image.open(CT_url)
     im = np.array(im).astype('float32')/255
